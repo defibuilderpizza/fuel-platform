@@ -1,0 +1,186 @@
+{
+  "_readme": "Provider prices (USD per 1M tokens, what Fuel pays) for closed-model labs. VERIFY each against the provider's official pricing page before syncing: these were gathered from third-party price lists in Nov 2026, which disagree in places. Fuel adds its markup on top. scripts/sync-closed-models.mjs only enables entries whose provider_model_id exists in the provider's live model list AND answer a test call. Long-context surcharges (e.g. Haiku above 100K input tokens) are not billed separately, so context is capped at the cheaper tier. Re-run the sync after any price change.",
+  "models": [
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-haiku-5-5",
+      "model": "anthropic/claude-haiku-5-5",
+      "input": 0.1,
+      "output": 0.5,
+      "context": 100000,
+      "source": "official: platform.claude.com/docs/en/about-claude/pricing, verified 24 Nov 2026 (≤100K-token tier; capped there)"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-sonnet-5-5",
+      "model": "anthropic/claude-sonnet-5-5",
+      "input": 2,
+      "output": 10,
+      "context": 1000000,
+      "source": "official: platform.claude.com/docs/en/about-claude/pricing, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-5-5",
+      "model": "anthropic/claude-opus-5-5",
+      "input": 4,
+      "output": 20,
+      "context": 1000000,
+      "source": "official: platform.claude.com/docs/en/about-claude/pricing, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-fable-5-2",
+      "model": "anthropic/claude-fable-5-2",
+      "input": 8,
+      "output": 40,
+      "context": 1000000,
+      "source": "official: platform.claude.com/docs/en/about-claude/pricing, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-fable-5-1",
+      "model": "anthropic/claude-fable-5-1",
+      "input": 10,
+      "output": 50,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-fable-5",
+      "model": "anthropic/claude-fable-5",
+      "input": 10,
+      "output": 50,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-5",
+      "model": "anthropic/claude-opus-5",
+      "input": 5,
+      "output": 25,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-sonnet-5",
+      "model": "anthropic/claude-sonnet-5",
+      "input": 2,
+      "output": 10,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026 ($2/$10 is now the standard price)"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-4-8",
+      "model": "anthropic/claude-opus-4-8",
+      "input": 5,
+      "output": 25,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-4-7",
+      "model": "anthropic/claude-opus-4-7",
+      "input": 5,
+      "output": 25,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-4-6",
+      "model": "anthropic/claude-opus-4-6",
+      "input": 5,
+      "output": 25,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-sonnet-4-6",
+      "model": "anthropic/claude-sonnet-4-6",
+      "input": 3,
+      "output": 15,
+      "context": 1000000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-4-5-20251101",
+      "model": "anthropic/claude-opus-4-5",
+      "input": 5,
+      "output": 25,
+      "context": 200000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026 (deprecated; Anthropic retires it 22 Jan 2027)"
+    },
+    {
+      "provider": "anthropic",
+      "provider_model_id": "claude-haiku-4-5-20251001",
+      "model": "anthropic/claude-haiku-4-5",
+      "input": 1,
+      "output": 5,
+      "context": 200000,
+      "source": "official: platform.claude.com pricing + models overview, verified 24 Nov 2026"
+    },
+    {
+      "provider": "openai",
+      "provider_model_id": "gpt-6-luna",
+      "model": "openai/gpt-6-luna",
+      "input": 0.1,
+      "output": 0.5,
+      "context": 128000,
+      "source": "third-party list, Nov 2026; model id to confirm"
+    },
+    {
+      "provider": "openai",
+      "provider_model_id": "gpt-6.1-terra",
+      "model": "openai/gpt-6.1-terra",
+      "input": 1,
+      "output": 5,
+      "context": 128000,
+      "source": "third-party list, Nov 2026; model id to confirm"
+    },
+    {
+      "provider": "openai",
+      "provider_model_id": "gpt-6.1-sol",
+      "model": "openai/gpt-6.1-sol",
+      "input": 2,
+      "output": 10,
+      "context": 128000,
+      "source": "third-party list, Nov 2026; model id to confirm"
+    },
+    {
+      "provider": "openai",
+      "provider_model_id": "gpt-6-astra",
+      "model": "openai/gpt-6-astra",
+      "input": 10,
+      "output": 50,
+      "context": 128000,
+      "source": "third-party list, Nov 2026; model id to confirm"
+    },
+    {
+      "provider": "openai",
+      "provider_model_id": "gpt-6-sol",
+      "model": "openai/gpt-6-sol",
+      "input": 2,
+      "output": 10,
+      "context": 128000,
+      "source": "openai.com/api pricing, 24 Nov 2026 (standard tier, below the 272K long-context surcharge)"
+    },
+    {
+      "provider": "openai",
+      "provider_model_id": "gpt-6.2-astra",
+      "model": "openai/gpt-6.2-astra",
+      "input": 8,
+      "output": 40,
+      "context": 128000,
+      "source": "openai.com/api pricing, 24 Nov 2026 (standard tier, below the 272K long-context surcharge)"
+    }
+  ],
+  "_paused_readme": "Entries with \"paused\": true are never enabled by the sync (and are switched off if live). Claude and OpenAI are paused until each provider gives written approval for Fuel's per-token model."
+}

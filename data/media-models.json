@@ -1,0 +1,204 @@
+{
+  "_note": "Pictures, video clips and 3D models Fuel offers, priced per output (provider cost in USD; Fuel adds its markup). Pictures are about 1 megapixel; clips are about 5-6 seconds; 3D models are GLB files made from a FLUX schnell picture (its cost is included). fal prices come from fal's pricing API (read 2026-11-26). Every fal request sends X-Fal-Store-IO: 0 and a 1-hour file expiry. Models with a 'partner' run on that company's own servers behind fal: fal's no-storage setting doesn't bind them, so Fuel shows a privacy warning for them. Together runs Wan 2.7 itself with prompt storage OFF. Sync: node --env-file=<env> scripts/sync-media-models.mjs [--dry] typical_seconds: how long a run usually takes (measured 2026-11-26), used for the studio's progress bar. Speech is priced per 1,000 characters; transcription per minute of audio (Whisper bills fal per compute second; 0.006/min is a conservative estimate from fal's 0.00111/compute-second). Uploaded audio goes to fal storage with the 1-hour expiry. quality: Draft < Good < High < Best (Fuel's judgement within each kind); speed is derived from typical_seconds.",
+  "provider": "together",
+  "image": [
+    {
+      "model": "black-forest-labs/FLUX.1-schnell",
+      "endpoint": "fal-ai/flux/schnell",
+      "cost": 0.0032,
+      "blurb": "FLUX schnell: fast drafts, a picture in a second or two. The cheapest way to try ideas.",
+      "provider": "fal",
+      "typical_seconds": 3,
+      "quality": "Draft"
+    },
+    {
+      "model": "Qwen/Qwen-Image",
+      "endpoint": "fal-ai/qwen-image",
+      "cost": 0.021,
+      "blurb": "Qwen-Image: good at text inside pictures and at following detailed prompts.",
+      "provider": "fal",
+      "typical_seconds": 10,
+      "quality": "Good"
+    },
+    {
+      "model": "black-forest-labs/FLUX.1-dev",
+      "endpoint": "fal-ai/flux/dev",
+      "cost": 0.027,
+      "blurb": "FLUX dev: sharp, detailed pictures with natural light.",
+      "provider": "fal",
+      "typical_seconds": 6,
+      "quality": "High"
+    },
+    {
+      "model": "ideogram/ideogram-3.0",
+      "endpoint": "fal-ai/ideogram/v3",
+      "cost": 0.03,
+      "blurb": "Ideogram 3: posters, logos and anything with lettering.",
+      "partner": "Ideogram",
+      "provider": "fal",
+      "typical_seconds": 12,
+      "quality": "High"
+    },
+    {
+      "model": "recraft/recraft-v3",
+      "endpoint": "fal-ai/recraft/v3/text-to-image",
+      "cost": 0.04,
+      "blurb": "Recraft 3: design work, illustrations and brand-style pictures.",
+      "partner": "Recraft",
+      "provider": "fal",
+      "typical_seconds": 7,
+      "quality": "High"
+    },
+    {
+      "model": "black-forest-labs/FLUX.1.1-pro",
+      "endpoint": "fal-ai/flux-pro/v1.1",
+      "cost": 0.042,
+      "blurb": "FLUX 1.1 pro: finished pictures with real detail.",
+      "partner": "Black Forest Labs",
+      "provider": "fal",
+      "typical_seconds": 5,
+      "quality": "Best"
+    }
+  ],
+  "video": [
+    {
+      "model": "Lightricks/LTX-Video",
+      "provider": "fal",
+      "endpoint": "fal-ai/ltx-video",
+      "cost": 0.02,
+      "blurb": "LTX Video: a short clip from one sentence, fast and the cheapest way to make video.",
+      "typical_seconds": 75,
+      "quality": "Draft"
+    },
+    {
+      "model": "Lightricks/LTX-Video-13B",
+      "provider": "fal",
+      "endpoint": "fal-ai/ltx-video-13b-distilled",
+      "cost": 0.04,
+      "blurb": "LTX Video 13B: sharper detail and steadier motion than LTX.",
+      "typical_seconds": 100,
+      "quality": "Good"
+    },
+    {
+      "model": "Wan-AI/wan2.7-t2v",
+      "provider": "together",
+      "cost": 0.1,
+      "blurb": "Wan 2.7: a 5-second clip with smooth motion and consistent scenes.",
+      "typical_seconds": 420,
+      "quality": "High"
+    },
+    {
+      "model": "minimax/hailuo-02",
+      "provider": "fal",
+      "endpoint": "fal-ai/minimax/hailuo-02/standard/text-to-video",
+      "cost": 0.27,
+      "input": {
+        "duration": "6"
+      },
+      "partner": "MiniMax",
+      "blurb": "Hailuo-02: cinematic 6-second clips with strong physics.",
+      "typical_seconds": 360,
+      "quality": "Best"
+    }
+  ],
+  "image_enabled": true,
+  "mesh": [
+    {
+      "model": "microsoft/TRELLIS",
+      "provider": "fal",
+      "endpoint": "fal-ai/trellis",
+      "image_field": "image_url",
+      "cost": 0.0232,
+      "blurb": "TRELLIS: a textured 3D model (GLB) from a quick picture of your prompt.",
+      "typical_seconds": 65,
+      "quality": "Good"
+    },
+    {
+      "model": "tencent/Hunyuan3D-2",
+      "provider": "fal",
+      "endpoint": "fal-ai/hunyuan3d/v2",
+      "image_field": "input_image_url",
+      "cost": 0.1632,
+      "blurb": "Hunyuan3D 2: detailed, clean 3D models for games and scenes.",
+      "typical_seconds": 240,
+      "quality": "High"
+    }
+  ],
+  "mesh_picture": {
+    "endpoint": "fal-ai/flux/schnell",
+    "note": "3D jobs first make this picture (cost included above: 0.0032)"
+  },
+  "speech": [
+    {
+      "model": "hexgrad/Kokoro-82M",
+      "provider": "fal",
+      "endpoint": "fal-ai/kokoro/american-english",
+      "cost": 0.02,
+      "typical_seconds": 10,
+      "text_field": "prompt",
+      "voice_field": "voice",
+      "voices": [
+        "af_heart",
+        "af_bella",
+        "af_nicole",
+        "am_michael",
+        "am_fenrir",
+        "bf_emma",
+        "bm_george"
+      ],
+      "blurb": "Kokoro: natural, clear voices for narration and assistants. The cheapest way to make speech.",
+      "quality": "Good"
+    },
+    {
+      "model": "elevenlabs/turbo-v2.5",
+      "provider": "fal",
+      "endpoint": "fal-ai/elevenlabs/tts/turbo-v2.5",
+      "cost": 0.05,
+      "typical_seconds": 3,
+      "text_field": "text",
+      "voice_field": "voice",
+      "partner": "ElevenLabs",
+      "voices": [
+        "Rachel",
+        "Aria",
+        "Sarah",
+        "Roger",
+        "Charlie",
+        "George"
+      ],
+      "blurb": "ElevenLabs Turbo 2.5: expressive voices in 30+ languages with low delay.",
+      "quality": "High"
+    },
+    {
+      "model": "minimax/speech-02-hd",
+      "provider": "fal",
+      "endpoint": "fal-ai/minimax/speech-02-hd",
+      "cost": 0.1,
+      "typical_seconds": 5,
+      "text_field": "text",
+      "voice_field": "voice_setting.voice_id",
+      "partner": "MiniMax",
+      "voices": [
+        "Wise_Woman",
+        "Friendly_Person",
+        "Inspirational_girl",
+        "Deep_Voice_Man",
+        "Calm_Woman",
+        "Casual_Guy"
+      ],
+      "blurb": "MiniMax Speech-02 HD: studio-quality voices with rich emotion.",
+      "quality": "Best"
+    }
+  ],
+  "transcription": [
+    {
+      "model": "openai/whisper",
+      "provider": "fal",
+      "endpoint": "fal-ai/wizper",
+      "cost": 0.006,
+      "typical_seconds": 8,
+      "blurb": "Whisper: accurate transcripts in 90+ languages from an audio file.",
+      "quality": "High"
+    }
+  ]
+}
