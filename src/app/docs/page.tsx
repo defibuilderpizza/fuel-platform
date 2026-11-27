@@ -173,7 +173,8 @@ export default function Page() {
               ["Integrations", "OpenAI SDK, AI SDK, LangChain, CrewAI…", "/docs/integrations"],
               ["Starter kit", "Agent wallet + first job in one command", "/docs/integrations"],
               ["OpenAPI", "Machine-readable spec", "/openapi.json"],
-              ["GitHub", "Open-source MCP server, SDK and plugins", "https://github.com/defibuilderpizza/fuel-integrations"],
+              ["Source code", "The platform, to read and verify", "https://github.com/defibuilderpizza/fuel-platform"],
+              ["SDK & plugins", "Open-source MCP server, SDK and plugins", "https://github.com/defibuilderpizza/fuel-integrations"],
             ].map(([t, b, h]) => (
               <a key={t} href={h} className="lift rounded-xl border border-line bg-card p-4">
                 <p className="font-semibold">{t}</p>

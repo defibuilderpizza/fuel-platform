@@ -49,5 +49,3 @@ docs/*-email.md
 
 # supabase CLI scratch
 supabase/.temp/
-
-!.env.example

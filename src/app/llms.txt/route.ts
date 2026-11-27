@@ -27,6 +27,7 @@ ${x402 ? `- No key? Pay per request with x402 (v2, scheme exact: USDC on ${x402.
 - Budget: GET /v1/account shows limits and what's left today. Set limits in plain words: POST /v1/account/budget { text: "at most $5 a day, no job over 10 cents" } (or "remove the daily limit", "pause spending"; dry_run: true to check).
 - USDG on Robinhood Chain (chain 4663): sign in with an EVM wallet (personal_sign), send USDG (0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168) to the deposit address from GET /v1/topups/usdg, then POST /v1/topups/usdg { tx_hash } (or wait a few minutes for the scanner).
 - News and updates: https://x.com/Fuelaicloud
+- Platform source (Business Source License 1.1): https://github.com/defibuilderpizza/fuel-platform
 - Source for the integrations (MIT): https://github.com/defibuilderpizza/fuel-integrations
 - Packages (npm): @fuelcompute/sdk (TypeScript client), @fuelcompute/mcp (MCP server: npx -y @fuelcompute/mcp), @fuelcompute/plugin-elizaos, @fuelcompute/goat-plugin, @fuelcompute/solana-agent-kit-plugin.
 - Teams: one owner funds many agents and sets daily and per-job limits per agent (/v1/teams).
